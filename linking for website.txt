@@ -1,0 +1,15 @@
+Local linking
+
+<add name="dbConnection" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\twoGamesDB.mdf;Integrated Security=True" />
+
+<endpoint address="http://localhost:8256/AdCRUD.svc" binding="basicHttpBinding" bindingConfiguration="CustomLarge" contract="AdService.IAdCRUD" name="WcfServices.AdCRUD" />
+<endpoint address="http://localhost:8256/UserCRUD.svc" binding="basicHttpBinding" bindingConfiguration="CustomLarge" contract="UserService.IUserCRUD" name="WcfServices.UserCRUD" />
+
+
+Azure linking
+
+<add name="dbConnection" connectionString="Server=tcp:yu97kbel2w.database.windows.net,1433;Database=twoGamesDB;User ID=twogames@yu97kbel2w;Password=ifmTYP2016;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" />
+  
+<endpoint address="http://twogameswcf.azurewebsites.net/AdCRUD.svc" binding="basicHttpBinding" bindingConfiguration="CustomLarge" contract="AdService.IAdCRUD" name="BasicHttpBinding_IAdCRUD" />
+<endpoint address="http://twogameswcf.azurewebsites.net/UserCRUD.svc" binding="basicHttpBinding" bindingConfiguration="CustomLarge" contract="UserService.IUserCRUD" name="BasicHttpBinding_IUserCRUD" />
+    

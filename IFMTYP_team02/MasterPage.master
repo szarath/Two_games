@@ -1,0 +1,208 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="IFMTYP_team02.newMaster" %>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   
+<!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css"/>
+<!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+        <meta charset="utf-8" />
+    <title runat="server">
+        twoGAMES
+    </title>
+
+</head>
+
+<body class="blue-grey lighten-5">
+    <form id="form1" runat="server">
+    <header>
+        
+            <div class="navbar-fixed">
+
+                
+                <!--Top NavBar-->
+                <nav class="top-nav" runat="server">
+                    <div class="nav-wrapper teal lighten-1" runat="server">
+                        <a href="#" data-activates="slide-out" class="button-collapse top-nav show-on-large"><i class="material-icons">menu</i></a>  
+                        <a href="Index.aspx" class="brand-logo center flow-text">twoGAMES</a>
+                        <ul class="right" runat="server">
+                            <!--<li class="hide-on-med-and-down">
+                                <div class="input-field">
+                                    <input id="searchLargeTopNav" type="search" runat="server"  ClientIDMode="static"/>
+                                    <label for="searchLargeTopNav"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </li>-->
+                            <li id="searchSmallTopNav"><a href="Search.aspx" class="waves-effect waves-light"><i class="material-icons">search</i></a></li>
+                            <li id="postNewAdTopNav" runat="server" class="hide-on-small-only"><a href="PostAd.aspx" class="waves-effect waves-light"><i class="small material-icons">add</i></a></li>
+                            <li id="managementDropDownTrigger" visible="false" runat="server" class="hide-on-small-only"><a class='dropdown-button' data-activates='dropDownManagementMenu'><i class="small material-icons">supervisor_account</i></a></li>
+                            <li id="dropDownMenuLoggedIn" visible="false" runat="server"><a class='dropdown-button' data-activates='dropDownUserMenuLoggedIn'><i class="small material-icons">perm_identity</i></a></li>
+                            <li id="dropDownMenuLoggedOut" visible="false" runat="server"><a class='dropdown-button' data-activates='dropDownUserMenuLoggedOut'><i class="small material-icons">perm_identity</i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+               
+               <!--Drop down user menu(top right)-->
+                <ul id='dropDownUserMenuLoggedIn' class='dropdown-content' runat="server">
+                    <!--<li><a href="Login.aspx">Sign In</a></li>
+                    <li><a href="Registration.aspx">Register</a></li>-->
+                    <li><a href="MyAds.aspx">My Ads</a></li>
+                    <li><a href="MyProfile.aspx">Profile</a></li>
+                    <li><a id="dropDownMenuSignOut" runat="server" onserverclick="dropDownMenuSignOut_ServerClick">Sign Out</a></li>
+                </ul>
+
+                <ul id='dropDownUserMenuLoggedOut' class='dropdown-content' runat="server">
+                    <li><a href="Login.aspx">Sign In</a></li>
+                    <li><a href="Registration.aspx">Register</a></li>
+                </ul>
+
+                <ul id="dropDownManagementMenu" class="dropdown-content" runat="server" visible="false">
+                    <li id="manageAdsDrop" visible="false" runat="server"><a href="AdManagement.aspx">Manage Ads</a></li>
+                    <li id="manageUsersDrop" visible="false" runat="server"><a href="UserManagement.aspx">Manage Users</a></li>
+                </ul>
+
+                <!--Slide out Nav-->
+                    <ul id="slide-out" class="side-nav"> <!--collapsible" data-collapsible="expandable">-->
+                        <li id="searchSideNav" class="hide-on-med-and-up show-on-small bold"><a href="Search.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">search</i>Search</a></li>
+                        <li id="logInSideNav" class="bold" runat="server"><a href="Login.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">https</i>Sign In</a></li>
+                        <li id="registerSideNav" class="bold" runat="server"><a href="Registration.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">mode_edit</i>Register</a></li> 
+                        <li id="postNewAdSideNav" class="hide-on-med-and-up show-on-small bold" runat="server"><a href="PostAd.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">add</i>Post New Ad</a></li>
+                        <li id="myAdsSideNav" class="bold" runat="server"><a href="MyAds.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">list</i>My Ads<span id="myAdsBadgeDropDown" class="badge" runat="server"></span></a></li>
+                        <li id="myProfileSideNav" class="bold" runat="server"><a href="MyProfile.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">perm_identity</i>My Profile</a></li>
+                        <li id="adminSideNavDivider" class="divider" visible="false" runat="server"></li>
+                        <!--<li id="adminSideNav" class="bold disabled" runat="server" visible="false"><a><i class="material-icons">supervisor_account</i>Admin</a></li>-->
+                        <li id="manageAdsSideNav" visible="false" runat="server"><a href="AdManagement.aspx" class="waves-effect waves-blue-grey">Manage Ads</a></li>
+                        <li id="manageUsersSideNav" visible="false" runat="server"><a href="UserManagement.aspx" class="waves-effect waves-blue-grey">Manage Users</a></li>
+                        <!--<li id="adminSideNav2" class="bold" runat="server" visible="false">
+                            <div class="collapsible-header"><i class="material-icons">supervisor_account</i>Admin</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li id="manageAdsSideNav2" visible="false" runat="server"><a href="AdManagement.aspx">Manage Ads</a></li>
+                                    <li id="manageUsersSideNav2" visible="false" runat="server"><a href="UserManagement.aspx" runat="server">Manage Users</a></li>
+                                </ul>
+                            </div>
+                        </li>-->
+                        <li class="divider"></li>
+                        <li class="bold" visible="false"><a id="signOutSideNav" runat="server" onserverclick="dropDownMenuSignOut_ServerClick"><i class="material-icons">lock_open</i>Sign Out</a></li>
+                        <li class="bold"><a href="Help.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">info_outline</i>Help</a></li>
+                        <li class="bold"><a href="ContactUs.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">question_answer</i>Contact Us</a></li>
+                        <li class="bold"><a href="AboutUs.aspx" class="waves-effect waves-blue-grey"><i class="material-icons">info</i>About Us</a></li>
+                    </ul>
+              </div>
+               
+               
+
+
+        </header>
+
+    <!--Content Placeholder for other pages-->
+
+      <style>
+        .thumb 
+        {
+            height: 75px;
+            margin: 10px 5px 0 0;
+        }
+
+        .trunctext
+        {
+             
+          width: 200px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+    </style>
+    
+    <div class="section">
+         <asp:ContentPlaceHolder id="PageContent" runat="server" ></asp:ContentPlaceHolder>
+    </div>
+    
+   
+        <div id="floatingPostAdButton" class="fixed-action-btn horizontal hide-on-med-and-up show-on-small" style="bottom: 45px; right: 24px;" runat="server" visible="false">
+            <a class="btn-floating btn-large teal waves-effect waves-light" href="PostAd.aspx">
+              <i class="large material-icons">add</i>
+            </a>
+        </div>
+
+    <!--Import jQuery before materialize.js-->
+
+
+      
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+      <asp:ScriptManager EnablePageMethods="true" ID="scriptManager" runat="server"></asp:ScriptManager>
+      <script>
+
+          // Initialize collapse button
+          $(".button-collapse").sideNav();
+          // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+          $('.collapsible').collapsible();
+
+          $('.datepicker').pickadate(
+              {
+                  selectMonths: true, // Creates a dropdown to control month
+                  selectYears: 200 // Creates a dropdown of 15 years to control year
+              });
+
+
+          $(document).ready(function ()
+          {
+              // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+              $('.modal-trigger').leanModal();
+          });
+
+
+          $('.dropdown-button').dropdown(
+              {
+                  inDuration: 300,
+                  outDuration: 225,
+                  constrain_width: false, // Does not change width of dropdown to that of the activator
+                  hover: false, // Activate on hover
+                  gutter: 0, // Spacing from edge
+                  belowOrigin: true, // Displays dropdown below the button
+                  alignment: 'right' // Displays dropdown with edge aligned to the left of button
+              });
+
+          $(document).ready(function ()
+          {
+              $('.slider').slider({ full_width: true });
+          });
+
+          $(document).ready(function ()
+          {
+              $('.carousel').carousel();
+          });
+
+          $(document).ready(function ()
+          {
+              $('select').material_select();
+          });
+
+          $(document).ready(function ()
+          {
+              $('ul.tabs').tabs();
+          });
+
+          $(document).ready(function () {
+              $('.tooltipped').tooltip({ delay: 80 });
+          });
+
+          $(document).ready(function () {
+              Materialize.updateTextFields();
+          })
+      </script>
+       
+
+    </form>
+</body>
+</html>
+

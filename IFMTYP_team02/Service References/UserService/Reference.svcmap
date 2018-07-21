@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0beab60d-24ca-4561-94c0-e8f453562a91" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8256/UserCRUD.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserCRUD.wsdl" MetadataType="Wsdl" ID="695d5c43-bb17-4d96-a4eb-541c81146470" SourceId="1" SourceUrl="http://localhost:8256/UserCRUD.svc?wsdl" />
+    <MetadataFile FileName="UserCRUD.xsd" MetadataType="Schema" ID="b6851163-8300-4ee1-848f-901c8365621b" SourceId="1" SourceUrl="http://localhost:8256/UserCRUD.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserCRUD1.xsd" MetadataType="Schema" ID="d94b70ae-28f2-4e14-90c8-104362ab073a" SourceId="1" SourceUrl="http://localhost:8256/UserCRUD.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserCRUD2.xsd" MetadataType="Schema" ID="6c54d533-d90a-49e4-9e5f-48aa7dc3b4dc" SourceId="1" SourceUrl="http://localhost:8256/UserCRUD.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserCRUD.disco" MetadataType="Disco" ID="5b61c2f0-ff26-4169-b7aa-2d7aaea380ed" SourceId="1" SourceUrl="http://localhost:8256/UserCRUD.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

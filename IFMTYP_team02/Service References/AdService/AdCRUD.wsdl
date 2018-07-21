@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AdCRUD" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8256/AdCRUD.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8256/AdCRUD.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8256/AdCRUD.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAdCRUD_insertAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_insertAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_deleteAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_deleteAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_updateAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_updateAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getAdDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAdDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getAdDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAdDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getEditAdDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEditAdDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getEditAdDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEditAdDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_searchAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchAds" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_searchAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getPlatforms_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPlatforms" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getPlatforms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPlatformsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getUserAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserAds" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getUserAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getRecentlyAdded_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRecentlyAdded" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getRecentlyAdded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRecentlyAddedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getNumUserAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNumUserAds" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getNumUserAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNumUserAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getFlaggedAdsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFlaggedAdsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getFlaggedAdsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFlaggedAdsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getAllAdsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAdsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getAllAdsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAdsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_searchAdsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchAdsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_searchAdsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchAdsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getUserEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserEmail" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getUserEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_unflagAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:unflagAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_unflagAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:unflagAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_flagAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:flagAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_flagAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:flagAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_reportAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:reportAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_reportAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:reportAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_unreportAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:unreportAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_unreportAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:unreportAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getReportedAdsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReportedAdsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getReportedAdsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReportedAdsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getUsersAdsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersAdsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getUsersAdsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersAdsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numNewAdsYearManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numNewAdsYearManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numNewAdsYearManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numNewAdsYearManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numNewAdsMonthManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numNewAdsMonthManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numNewAdsMonthManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numNewAdsMonthManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numNewAdsWeekManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numNewAdsWeekManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numNewAdsWeekManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numNewAdsWeekManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numNewAdsDayManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numNewAdsDayManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numNewAdsDayManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numNewAdsDayManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numReportedAdsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numReportedAdsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numReportedAdsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numReportedAdsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numFlaggedAdsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numFlaggedAdsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numFlaggedAdsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numFlaggedAdsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numPremAdsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numPremAdsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_numPremAdsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numPremAdsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_incViewCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:incViewCount" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_incViewCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:incViewCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getViewCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:getViewCount" />
+  </wsdl:message>
+  <wsdl:message name="IAdCRUD_getViewCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getViewCountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAdCRUD">
+    <wsdl:operation name="insertAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/insertAd" message="tns:IAdCRUD_insertAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/insertAdResponse" message="tns:IAdCRUD_insertAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/deleteAd" message="tns:IAdCRUD_deleteAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/deleteAdResponse" message="tns:IAdCRUD_deleteAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/updateAd" message="tns:IAdCRUD_updateAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/updateAdResponse" message="tns:IAdCRUD_updateAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAdDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getAdDetails" message="tns:IAdCRUD_getAdDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getAdDetailsResponse" message="tns:IAdCRUD_getAdDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEditAdDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getEditAdDetails" message="tns:IAdCRUD_getEditAdDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getEditAdDetailsResponse" message="tns:IAdCRUD_getEditAdDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/searchAds" message="tns:IAdCRUD_searchAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/searchAdsResponse" message="tns:IAdCRUD_searchAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlatforms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getPlatforms" message="tns:IAdCRUD_getPlatforms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getPlatformsResponse" message="tns:IAdCRUD_getPlatforms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getUserAds" message="tns:IAdCRUD_getUserAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getUserAdsResponse" message="tns:IAdCRUD_getUserAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRecentlyAdded">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getRecentlyAdded" message="tns:IAdCRUD_getRecentlyAdded_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getRecentlyAddedResponse" message="tns:IAdCRUD_getRecentlyAdded_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumUserAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getNumUserAds" message="tns:IAdCRUD_getNumUserAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getNumUserAdsResponse" message="tns:IAdCRUD_getNumUserAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlaggedAdsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getFlaggedAdsManagement" message="tns:IAdCRUD_getFlaggedAdsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getFlaggedAdsManagementResponse" message="tns:IAdCRUD_getFlaggedAdsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAdsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getAllAdsManagement" message="tns:IAdCRUD_getAllAdsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getAllAdsManagementResponse" message="tns:IAdCRUD_getAllAdsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchAdsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/searchAdsManagement" message="tns:IAdCRUD_searchAdsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/searchAdsManagementResponse" message="tns:IAdCRUD_searchAdsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getUserEmail" message="tns:IAdCRUD_getUserEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getUserEmailResponse" message="tns:IAdCRUD_getUserEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="unflagAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/unflagAd" message="tns:IAdCRUD_unflagAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/unflagAdResponse" message="tns:IAdCRUD_unflagAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="flagAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/flagAd" message="tns:IAdCRUD_flagAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/flagAdResponse" message="tns:IAdCRUD_flagAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="reportAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/reportAd" message="tns:IAdCRUD_reportAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/reportAdResponse" message="tns:IAdCRUD_reportAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="unreportAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/unreportAd" message="tns:IAdCRUD_unreportAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/unreportAdResponse" message="tns:IAdCRUD_unreportAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportedAdsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getReportedAdsManagement" message="tns:IAdCRUD_getReportedAdsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getReportedAdsManagementResponse" message="tns:IAdCRUD_getReportedAdsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsersAdsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getUsersAdsManagement" message="tns:IAdCRUD_getUsersAdsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getUsersAdsManagementResponse" message="tns:IAdCRUD_getUsersAdsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numNewAdsYearManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/numNewAdsYearManagement" message="tns:IAdCRUD_numNewAdsYearManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/numNewAdsYearManagementResponse" message="tns:IAdCRUD_numNewAdsYearManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numNewAdsMonthManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/numNewAdsMonthManagement" message="tns:IAdCRUD_numNewAdsMonthManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/numNewAdsMonthManagementResponse" message="tns:IAdCRUD_numNewAdsMonthManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numNewAdsWeekManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/numNewAdsWeekManagement" message="tns:IAdCRUD_numNewAdsWeekManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/numNewAdsWeekManagementResponse" message="tns:IAdCRUD_numNewAdsWeekManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numNewAdsDayManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/numNewAdsDayManagement" message="tns:IAdCRUD_numNewAdsDayManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/numNewAdsDayManagementResponse" message="tns:IAdCRUD_numNewAdsDayManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numReportedAdsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/numReportedAdsManagement" message="tns:IAdCRUD_numReportedAdsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/numReportedAdsManagementResponse" message="tns:IAdCRUD_numReportedAdsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numFlaggedAdsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/numFlaggedAdsManagement" message="tns:IAdCRUD_numFlaggedAdsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/numFlaggedAdsManagementResponse" message="tns:IAdCRUD_numFlaggedAdsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numPremAdsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/numPremAdsManagement" message="tns:IAdCRUD_numPremAdsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/numPremAdsManagementResponse" message="tns:IAdCRUD_numPremAdsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="incViewCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/incViewCount" message="tns:IAdCRUD_incViewCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/incViewCountResponse" message="tns:IAdCRUD_incViewCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getViewCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdCRUD/getViewCount" message="tns:IAdCRUD_getViewCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdCRUD/getViewCountResponse" message="tns:IAdCRUD_getViewCount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAdCRUD" type="tns:IAdCRUD">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertAd">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/insertAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAd">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/deleteAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAd">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/updateAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAdDetails">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getAdDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEditAdDetails">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getEditAdDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchAds">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/searchAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlatforms">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getPlatforms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserAds">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getUserAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentlyAdded">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getRecentlyAdded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumUserAds">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getNumUserAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlaggedAdsManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getFlaggedAdsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAdsManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getAllAdsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchAdsManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/searchAdsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserEmail">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getUserEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unflagAd">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/unflagAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="flagAd">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/flagAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reportAd">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/reportAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unreportAd">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/unreportAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReportedAdsManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getReportedAdsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsersAdsManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getUsersAdsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numNewAdsYearManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/numNewAdsYearManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numNewAdsMonthManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/numNewAdsMonthManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numNewAdsWeekManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/numNewAdsWeekManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numNewAdsDayManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/numNewAdsDayManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numReportedAdsManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/numReportedAdsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numFlaggedAdsManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/numFlaggedAdsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numPremAdsManagement">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/numPremAdsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="incViewCount">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/incViewCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getViewCount">
+      <soap:operation soapAction="http://tempuri.org/IAdCRUD/getViewCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdCRUD">
+    <wsdl:port name="BasicHttpBinding_IAdCRUD" binding="tns:BasicHttpBinding_IAdCRUD">
+      <soap:address location="http://localhost:8256/AdCRUD.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

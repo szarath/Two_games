@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserCRUD" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8256/UserCRUD.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8256/UserCRUD.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8256/UserCRUD.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserCRUD_insertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_insertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_deleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_deleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getUserEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserEmail" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getUserEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserEmail" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserPremAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserPremAccess" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserPremAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserPremAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getFlaggedUsersManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFlaggedUsersManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getFlaggedUsersManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFlaggedUsersManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getAllUsersManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsersManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getAllUsersManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsersManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_unflagUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:unflagUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_unflagUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:unflagUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_flagUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:flagUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_flagUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:flagUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_reportUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:reportUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_reportUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:reportUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_unreportUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:unreportUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_unreportUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:unreportUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getReportedUsersManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReportedUsersManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getReportedUsersManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReportedUsersManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsername" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_isUserPrem_InputMessage">
+    <wsdl:part name="parameters" element="tns:isUserPrem" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_isUserPrem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isUserPremResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getUserDetailsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDetailsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_getUserDetailsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDetailsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserDetailsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserDetailsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_updateUserDetailsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserDetailsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numNewUsersYearManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numNewUsersYearManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numNewUsersYearManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numNewUsersYearManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numNewUsersMonthManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numNewUsersMonthManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numNewUsersMonthManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numNewUsersMonthManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numNewUsersWeekManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numNewUsersWeekManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numNewUsersWeekManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numNewUsersWeekManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numNewUsersDayManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numNewUsersDayManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numNewUsersDayManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numNewUsersDayManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numReportedUsersManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numReportedUsersManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numReportedUsersManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numReportedUsersManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numFlaggedUsersManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numFlaggedUsersManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numFlaggedUsersManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numFlaggedUsersManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numPremUsersManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:numPremUsersManagement" />
+  </wsdl:message>
+  <wsdl:message name="IUserCRUD_numPremUsersManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:numPremUsersManagementResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserCRUD">
+    <wsdl:operation name="insertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/insertUser" message="tns:IUserCRUD_insertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/insertUserResponse" message="tns:IUserCRUD_insertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/deleteUser" message="tns:IUserCRUD_deleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/deleteUserResponse" message="tns:IUserCRUD_deleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/updateUserInfo" message="tns:IUserCRUD_updateUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/updateUserInfoResponse" message="tns:IUserCRUD_updateUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/Authenticate" message="tns:IUserCRUD_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/AuthenticateResponse" message="tns:IUserCRUD_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/updateUserPassword" message="tns:IUserCRUD_updateUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/updateUserPasswordResponse" message="tns:IUserCRUD_updateUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/getUserEmail" message="tns:IUserCRUD_getUserEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/getUserEmailResponse" message="tns:IUserCRUD_getUserEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUserEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/updateUserEmail" message="tns:IUserCRUD_updateUserEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/updateUserEmailResponse" message="tns:IUserCRUD_updateUserEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUserPremAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/updateUserPremAccess" message="tns:IUserCRUD_updateUserPremAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/updateUserPremAccessResponse" message="tns:IUserCRUD_updateUserPremAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlaggedUsersManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/getFlaggedUsersManagement" message="tns:IUserCRUD_getFlaggedUsersManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/getFlaggedUsersManagementResponse" message="tns:IUserCRUD_getFlaggedUsersManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsersManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/getAllUsersManagement" message="tns:IUserCRUD_getAllUsersManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/getAllUsersManagementResponse" message="tns:IUserCRUD_getAllUsersManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="unflagUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/unflagUser" message="tns:IUserCRUD_unflagUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/unflagUserResponse" message="tns:IUserCRUD_unflagUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="flagUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/flagUser" message="tns:IUserCRUD_flagUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/flagUserResponse" message="tns:IUserCRUD_flagUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="reportUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/reportUser" message="tns:IUserCRUD_reportUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/reportUserResponse" message="tns:IUserCRUD_reportUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="unreportUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/unreportUser" message="tns:IUserCRUD_unreportUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/unreportUserResponse" message="tns:IUserCRUD_unreportUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportedUsersManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/getReportedUsersManagement" message="tns:IUserCRUD_getReportedUsersManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/getReportedUsersManagementResponse" message="tns:IUserCRUD_getReportedUsersManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/getUsername" message="tns:IUserCRUD_getUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/getUsernameResponse" message="tns:IUserCRUD_getUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isUserPrem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/isUserPrem" message="tns:IUserCRUD_isUserPrem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/isUserPremResponse" message="tns:IUserCRUD_isUserPrem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserDetailsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/getUserDetailsManagement" message="tns:IUserCRUD_getUserDetailsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/getUserDetailsManagementResponse" message="tns:IUserCRUD_getUserDetailsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUserDetailsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/updateUserDetailsManagement" message="tns:IUserCRUD_updateUserDetailsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/updateUserDetailsManagementResponse" message="tns:IUserCRUD_updateUserDetailsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numNewUsersYearManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/numNewUsersYearManagement" message="tns:IUserCRUD_numNewUsersYearManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/numNewUsersYearManagementResponse" message="tns:IUserCRUD_numNewUsersYearManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numNewUsersMonthManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/numNewUsersMonthManagement" message="tns:IUserCRUD_numNewUsersMonthManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/numNewUsersMonthManagementResponse" message="tns:IUserCRUD_numNewUsersMonthManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numNewUsersWeekManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/numNewUsersWeekManagement" message="tns:IUserCRUD_numNewUsersWeekManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/numNewUsersWeekManagementResponse" message="tns:IUserCRUD_numNewUsersWeekManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numNewUsersDayManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/numNewUsersDayManagement" message="tns:IUserCRUD_numNewUsersDayManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/numNewUsersDayManagementResponse" message="tns:IUserCRUD_numNewUsersDayManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numReportedUsersManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/numReportedUsersManagement" message="tns:IUserCRUD_numReportedUsersManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/numReportedUsersManagementResponse" message="tns:IUserCRUD_numReportedUsersManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numFlaggedUsersManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/numFlaggedUsersManagement" message="tns:IUserCRUD_numFlaggedUsersManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/numFlaggedUsersManagementResponse" message="tns:IUserCRUD_numFlaggedUsersManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="numPremUsersManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserCRUD/numPremUsersManagement" message="tns:IUserCRUD_numPremUsersManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserCRUD/numPremUsersManagementResponse" message="tns:IUserCRUD_numPremUsersManagement_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserCRUD" type="tns:IUserCRUD">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertUser">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/insertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/deleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/updateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUserPassword">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/updateUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserEmail">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/getUserEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUserEmail">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/updateUserEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUserPremAccess">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/updateUserPremAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlaggedUsersManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/getFlaggedUsersManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsersManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/getAllUsersManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unflagUser">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/unflagUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="flagUser">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/flagUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reportUser">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/reportUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unreportUser">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/unreportUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReportedUsersManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/getReportedUsersManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsername">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/getUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUserPrem">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/isUserPrem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserDetailsManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/getUserDetailsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUserDetailsManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/updateUserDetailsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numNewUsersYearManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/numNewUsersYearManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numNewUsersMonthManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/numNewUsersMonthManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numNewUsersWeekManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/numNewUsersWeekManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numNewUsersDayManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/numNewUsersDayManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numReportedUsersManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/numReportedUsersManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numFlaggedUsersManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/numFlaggedUsersManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numPremUsersManagement">
+      <soap:operation soapAction="http://tempuri.org/IUserCRUD/numPremUsersManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserCRUD">
+    <wsdl:port name="BasicHttpBinding_IUserCRUD" binding="tns:BasicHttpBinding_IUserCRUD">
+      <soap:address location="http://localhost:8256/UserCRUD.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

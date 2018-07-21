@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c36081bc-c890-40a2-b960-35bbe1ef2766" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8256/AdCRUD.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AdCRUD.xsd" MetadataType="Schema" ID="e75bee39-dc91-479b-8344-bbc2d1a86a8b" SourceId="1" SourceUrl="http://localhost:8256/AdCRUD.svc?xsd=xsd1" />
+    <MetadataFile FileName="AdCRUD1.xsd" MetadataType="Schema" ID="05327964-1d14-44f3-abc2-677518ae9051" SourceId="1" SourceUrl="http://localhost:8256/AdCRUD.svc?xsd=xsd2" />
+    <MetadataFile FileName="AdCRUD.disco" MetadataType="Disco" ID="45dba3e7-c100-4d84-bdc8-edc02ed75981" SourceId="1" SourceUrl="http://localhost:8256/AdCRUD.svc?disco" />
+    <MetadataFile FileName="AdCRUD.wsdl" MetadataType="Wsdl" ID="21cca8e8-27bf-4f02-8956-e582fe70f311" SourceId="1" SourceUrl="http://localhost:8256/AdCRUD.svc?wsdl" />
+    <MetadataFile FileName="AdCRUD2.xsd" MetadataType="Schema" ID="762fa0ec-3877-40e2-82db-af49e2101543" SourceId="1" SourceUrl="http://localhost:8256/AdCRUD.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
